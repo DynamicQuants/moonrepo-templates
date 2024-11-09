@@ -1,0 +1,44 @@
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Dependencies.
+node_modules
+.pnp
+.pnp.js
+
+# Local env files.
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Tests
+coverage
+.coverage
+.nyc_output
+__snapshots__
+__results__
+
+# Build Outputs.
+.next
+out
+build
+dist
+.swc
+tsconfig.tsbuildinfo
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# moon
+.moon/cache
+.moon/docker
+
+# Misc OS.
+.DS_Store
+*.pem

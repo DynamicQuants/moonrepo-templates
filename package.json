@@ -1,0 +1,17 @@
+{
+  "name": "moonrepo-templates",
+  "version": "1.0.0",
+  "description": "Moonrepo Templates",
+  "private": true,
+  "devDependencies": {
+    "@/eslint-config": "workspace:*",
+    "@/prettier-config": "workspace:*",
+    "@/typescript-config": "workspace:*",
+    "@moonrepo/cli": "^1.29.4"
+  },
+  "author": "Dynamic Quants",
+  "packageManager": "pnpm@9.11.0",
+  "engines": {
+    "node": "20.18.0"
+  }
+}

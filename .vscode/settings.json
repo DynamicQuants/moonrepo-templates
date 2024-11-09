@@ -1,0 +1,63 @@
+{
+  /*
+   * ********************************************************************************************
+   * Typescript settings.
+   * ********************************************************************************************
+   */
+
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "[handlebars]": {
+    "editor.formatOnSave": false
+  },
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "*.tera": "handlebars"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[yaml]": {
+    "editor.formatOnSave": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.removeUnusedImports": "always"
+  },
+
+  /*
+   * ********************************************************************************************
+   * Python settings.
+   * ********************************************************************************************
+   */
+
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never",
+      "source.unusedImports": "never"
+    }
+  },
+  "python.terminal.activateEnvironment": true,
+  "python.languageServer": "Pylance",
+  "python.analysis.typeCheckingMode": "standard",
+  "black-formatter.args": ["--line-length", "100"],
+  "isort.args": [
+    "--profile",
+    "black",
+    "--line-length",
+    "100"
+    // Add --src-path args here.
+  ],
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingTypeStubs": "warning"
+  },
+  "mypy-type-checker.args": ["--ignore-missing-imports"],
+  "python.testing.pytestArgs": [],
+
+  // These should be set by the user, depending on the project.
+  "python.analysis.extraPaths": []
+}
