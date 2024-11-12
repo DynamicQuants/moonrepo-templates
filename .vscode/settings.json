@@ -26,6 +26,9 @@
   "editor.codeActionsOnSave": {
     "source.removeUnusedImports": "always"
   },
+  "typescript.tsserver.watchOptions": {
+    "excludeDirectories": ["node_modules", "dist", ".next"]
+  },
 
   /*
    * ********************************************************************************************
