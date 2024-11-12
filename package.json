@@ -4,9 +4,7 @@
   "description": "Moonrepo Templates",
   "private": true,
   "devDependencies": {
-    "@/eslint-config": "workspace:*",
-    "@/prettier-config": "workspace:*",
-    "@/typescript-config": "workspace:*",
+    "@dynamic-quants/tools-configs": "^1.0.18",
     "@moonrepo/cli": "^1.29.4"
   },
   "author": "Dynamic Quants",
