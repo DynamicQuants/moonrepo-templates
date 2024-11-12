@@ -3,13 +3,6 @@ $schema: 'https://moonrepo.dev/schemas/workspace.json'
 versionConstraint: '>=1.16.0'
 
 projects:
-  # Tools and configs.
-  eslint-config: 'packages/eslint-config'
-  jest-config: 'packages/jest-config'
-  tailwind-config: 'packages/tailwind-config'
-  typescript-config: 'packages/typescript-config'
-
-  # Templates.
   nextjs: 'templates/nextjs'
 
 vcs:
