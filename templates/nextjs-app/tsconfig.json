@@ -1,0 +1,12 @@
+{
+  "extends": "@dynamic-quants/config-tools/typescript/nextjs.json",
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "plugins": [{ "name": "next" }],
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@actions/*": ["./src/actions/*"]
+    }
+  }
+}

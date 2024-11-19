@@ -4,7 +4,7 @@
   "description": "Moonrepo Templates",
   "private": true,
   "devDependencies": {
-    "@dynamic-quants/tools-configs": "^1.0.18",
+    "@dynamic-quants/config-tools": "^1.0.2",
     "@moonrepo/cli": "^1.29.4"
   },
   "author": "Dynamic Quants",

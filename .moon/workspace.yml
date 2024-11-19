@@ -3,7 +3,7 @@ $schema: 'https://moonrepo.dev/schemas/workspace.json'
 versionConstraint: '>=1.16.0'
 
 projects:
-  nextjs: 'templates/nextjs'
+  nextjs-app: 'templates/nextjs-app'
 
 vcs:
   manager: 'git'
@@ -16,7 +16,3 @@ runner:
     - ':test'
     - ':typecheck'
   logRunningCommand: true
-
-generator:
-  templates:
-    - './templates'

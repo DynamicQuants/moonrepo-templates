@@ -1,0 +1,47 @@
+type: application
+language: typescript
+
+fileGroups:
+  app:
+    - 'src/app/**/*'
+    - 'next-env.d.ts'
+    - 'next.config.*'
+  tests:
+    - 'tests/**/*'
+
+tasks:
+  build:
+    command: 'next build'
+    type: build
+    inputs:
+      - '@group(app)'
+  dev:
+    command: 'next dev --port 3000'
+    type: run
+    local: true
+  start:
+    command: 'next start'
+    type: run
+    local: true
+  lint:
+    command: 'next lint'
+    type: test
+  test:
+    command: 'jest'
+    type: test
+    inputs:
+      - '@group(tests)'
+  test-watch:
+    command: 'jest --watch'
+    type: test
+    inputs:
+      - '@group(tests)'
+  test-e2e:
+    command: 'playwright test'
+    type: test
+    inputs:
+      - '@group(tests)'
+  format-check:
+    command: 'prettier --check \"{app,public,test}/**/*.{ts,tsx,md}\" \"*.{ts,tsx,mjs}\"'
+  format:
+    command: 'prettier --write \"{app,public,test}/**/*.{ts,tsx,md}\" \"*.{ts,tsx,mjs}\"'

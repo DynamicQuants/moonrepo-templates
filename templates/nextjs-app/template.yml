@@ -1,0 +1,13 @@
+$schema: 'https://moonrepo.dev/schemas/template.json'
+
+title: 'Next.js Template'
+description: 'A template for Next.js apps.'
+destination: '/apps/[name]'
+
+# Variables that will be interpolated and rendered within template files.
+variables:
+  name:
+    type: 'string'
+    default: ''
+    required: true
+    prompt: 'Package name?'

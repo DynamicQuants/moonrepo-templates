@@ -22,8 +22,7 @@ coverage
 .coverage
 .nyc_output
 __snapshots__
-__results__
-
+playwright
 # Build Outputs.
 .next
 out
