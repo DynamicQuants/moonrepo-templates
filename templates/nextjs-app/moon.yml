@@ -10,22 +10,30 @@ fileGroups:
     - 'tests/**/*'
 
 tasks:
+  # Building the application.
   build:
     command: 'next build'
     type: build
     inputs:
       - '@group(app)'
-  dev:
-    command: 'next dev --port 3000'
-    type: run
-    local: true
+
+  # Running the application in production mode.
   start:
     command: 'next start'
     type: run
     local: true
+
+  # Running the application in development mode.
+  dev:
+    command: 'next dev --port 3000'
+    type: run
+    local: true
+
+  # Linting using Next.js and ESLint.
   lint:
     command: 'next lint'
-    type: test
+
+  # Testing with Jest.
   test:
     command: 'jest --verbose'
     type: test
@@ -41,7 +49,9 @@ tasks:
     type: test
     inputs:
       - '@group(tests)'
+
+  # Checking formatting using Prettier.
   format-check:
-    command: 'prettier --check \"{app,public,test}/**/*.{ts,tsx,md}\" \"*.{ts,tsx,mjs}\"'
+    command: 'prettier --check \"src/**/*.{ts,tsx,md}\" \"*.{ts,tsx,mjs}\"'
   format:
-    command: 'prettier --write \"{app,public,test}/**/*.{ts,tsx,md}\" \"*.{ts,tsx,mjs}\"'
+    command: 'prettier --write \"src/**/*.{ts,tsx,md}\" \"*.{ts,tsx,mjs}\"'

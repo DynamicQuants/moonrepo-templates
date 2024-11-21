@@ -23,7 +23,7 @@ generator:
 Then generate the project:
 
 ```bash
-moon repo generate nextjs-app
+moon generate nextjs-app
 ```
 
 ## How to run the project
