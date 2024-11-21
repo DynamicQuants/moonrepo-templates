@@ -1,6 +1,6 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ['@dynamic-quants/config-tools/eslint/nextjs'],
+  extends: [require.resolve('@dynamic-quants/config-tools/eslint/nextjs')],
   parserOptions: {
     project: true,
   },

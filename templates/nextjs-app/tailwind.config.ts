@@ -1,6 +1,5 @@
-import type { Config } from 'tailwindcss';
-
 import tailwindConfig from '@dynamic-quants/config-tools/tailwind';
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   presets: [tailwindConfig],

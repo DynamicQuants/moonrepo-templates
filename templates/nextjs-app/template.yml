@@ -8,6 +8,6 @@ destination: '/apps/[name]'
 variables:
   name:
     type: 'string'
-    default: ''
+    default: 'my-nextjs-app'
     required: true
-    prompt: 'Package name?'
+    prompt: 'Name of application?'

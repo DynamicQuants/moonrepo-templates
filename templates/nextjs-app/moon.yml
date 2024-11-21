@@ -3,7 +3,7 @@ language: typescript
 
 fileGroups:
   app:
-    - 'src/app/**/*'
+    - 'src/**/*'
     - 'next-env.d.ts'
     - 'next.config.*'
   tests:
@@ -27,7 +27,7 @@ tasks:
     command: 'next lint'
     type: test
   test:
-    command: 'jest'
+    command: 'jest --verbose'
     type: test
     inputs:
       - '@group(tests)'

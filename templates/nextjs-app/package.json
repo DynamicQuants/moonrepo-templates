@@ -10,30 +10,33 @@
     "test": "jest --verbose",
     "test:watch": "jest --watch",
     "test:e2e": "playwright test",
-    "format:check": "prettier --check \"{app,public,test}/**/*.{ts,tsx,md}\" \"*.{ts,tsx,mjs}\"",
-    "format": "prettier --write \"{app,public,test}/**/*.{ts,tsx,md}\" \"*.{ts,tsx,mjs}\""
+    "format:check": "prettier --check \"src/**/*.{ts,spec.ts,spec.tsx,tsx,md}\" \"*.{ts,tsx,mjs}\"",
+    "format": "prettier --write \"src/**/*.{ts,spec.ts,spec.tsx,tsx,md}\" \"*.{ts,tsx,mjs}\""
   },
   "dependencies": {
     "geist": "^1.3.1",
-    "next": "15.0.2",
+    "next": "15.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@dynamic-quants/config-tools": "^1.0.2",
-    "@jest/globals": "^29.7.0",
-    "@next/eslint-plugin-next": "^15.0.2",
-    "@playwright/test": "^1.48.2",
+    "@dynamic-quants/config-tools": "^1.0.6",
+    "@next/eslint-plugin-next": "14",
+    "@playwright/test": "1.49.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.1",
+    "@trivago/prettier-plugin-sort-imports": "4.3.0",
     "@types/jest": "^29.5.14",
-    "@types/node": "^22.9.0",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "jest": "^29.7.0",
+    "@types/react": "18.2.45",
+    "@types/react-dom": "18.3.1",
+    "@vercel/style-guide": "^6.0.0",
+    "eslint": "8.57.1",
+    "eslint-plugin-only-warn": "^1.1.0",
+    "jest": "29.7.0",
     "jest-environment-jsdom": "^29.7.0",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14",
-    "typescript": "5.6.3"
+    "postcss": "^8.4.49",
+    "prettier-plugin-multiline-arrays": "^3.0.6",
+    "tailwindcss": "^3.4.15",
+    "typescript": "5.5.4"
   }
 }

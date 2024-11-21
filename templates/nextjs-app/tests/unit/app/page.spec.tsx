@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { describe, it, expect, afterAll, beforeAll } from '@jest/globals';
+
 import Home from '../../../src/app/page';
 
 describe('Home page', () => {
