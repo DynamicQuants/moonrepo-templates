@@ -6,7 +6,7 @@
     "dev": "next dev --port 3000",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --max-warnings 0",
+    "lint": "next lint",
     "test": "jest --verbose",
     "test:watch": "jest --watch",
     "test:e2e": "playwright test",
