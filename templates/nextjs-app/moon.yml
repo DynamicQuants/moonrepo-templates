@@ -22,6 +22,8 @@ tasks:
     command: 'next start'
     type: run
     local: true
+    deps:
+      - build
 
   # Running the application in development mode.
   dev:
