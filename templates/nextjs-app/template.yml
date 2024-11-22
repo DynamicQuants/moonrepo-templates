@@ -9,4 +9,4 @@ variables:
     type: 'string'
     default: 'my-nextjs-app'
     required: true
-    prompt: 'Name of application?'
+    prompt: 'Whats the name of your Next.js application?'
