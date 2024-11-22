@@ -1,0 +1,3 @@
+{
+  "extends": "@dynamic-quants/config-tools/typescript/nestjs.json"
+}

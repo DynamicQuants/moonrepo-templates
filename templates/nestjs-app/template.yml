@@ -1,0 +1,12 @@
+$schema: 'https://moonrepo.dev/schemas/template.json'
+
+title: 'NestJS Template'
+description: 'A template for NestJS apps.'
+destination: '/apps/[name]'
+
+variables:
+  name:
+    type: 'string'
+    default: 'my-nestjs-app'
+    required: true
+    prompt: 'Whats the name of your NestJS application?'

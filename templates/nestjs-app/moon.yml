@@ -1,0 +1,104 @@
+type: application
+language: typescript
+
+fileGroups:
+  app:
+    - 'src/**/*'
+  tests:
+    - 'tests/**/*'
+
+tasks:
+  # Building the application.
+  build:
+    command: 'nest build'
+    type: build
+    inputs:
+      - '@group(app)'
+
+  # Formatting the code using Prettier.
+  format:
+    command: 'prettier --write "src/**/*.ts" "tests/**/*.ts"'
+    type: run
+    inputs:
+      - '@group(app)'
+      - '@group(tests)'
+
+  # Checking formatting using Prettier.
+  format-check:
+    command: 'prettier --check "src/**/*.ts" "tests/**/*.ts"'
+    type: run
+    inputs:
+      - '@group(app)'
+      - '@group(tests)'
+
+  # Starting the application in production mode.
+  start:
+    command: 'nest start'
+    type: run
+    local: true
+    deps:
+      - build
+
+  # Starting the application in development mode with watch.
+  dev:
+    command: 'nest start --watch'
+    type: run
+    local: true
+
+  # Starting the application in debug mode with watch.
+  start-debug:
+    command: 'nest start --debug --watch'
+    type: run
+    local: true
+    deps:
+      - build
+
+  # Starting the application in production mode from built files.
+  start-prod:
+    command: 'node dist/main'
+    type: run
+    deps:
+      - build
+
+  # Linting the code using ESLint.
+  lint:
+    command: 'eslint "{src,tests}/**/*.ts" --fix'
+    type: run
+    inputs:
+      - '@group(app)'
+      - '@group(tests)'
+
+  # Running tests with Jest in verbose mode.
+  test:
+    command: 'jest --verbose'
+    type: test
+    inputs:
+      - '@group(tests)'
+
+  # Running tests in watch mode with Jest.
+  test-watch:
+    command: 'jest --watch'
+    type: test
+    inputs:
+      - '@group(tests)'
+
+  # Running tests with coverage using Jest.
+  test-cov:
+    command: 'jest --coverage'
+    type: test
+    inputs:
+      - '@group(tests)'
+
+  # Running tests in debug mode with Jest.
+  test-debug:
+    command: 'node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand'
+    type: test
+    inputs:
+      - '@group(tests)'
+
+  # Running end-to-end tests with Jest.
+  test-e2e:
+    command: 'jest --config ./jest.e2e.ts'
+    type: test
+    inputs:
+      - '@group(tests)'
