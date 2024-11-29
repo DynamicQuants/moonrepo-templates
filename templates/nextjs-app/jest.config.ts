@@ -1,3 +1,3 @@
-import config from '@dynamic-quants/config-tools/jest/nextjs';
+import { jestNextjs } from '@dynamic-quants/config-tools';
 
-export default config;
+export default jestNextjs;

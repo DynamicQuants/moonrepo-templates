@@ -4,6 +4,7 @@ versionConstraint: '>=1.16.0'
 
 projects:
   nextjs-app: 'templates/nextjs-app'
+  nestjs-app: 'templates/nestjs-app'
 
 vcs:
   manager: 'git'

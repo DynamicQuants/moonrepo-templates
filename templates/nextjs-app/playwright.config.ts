@@ -1,3 +1,3 @@
-import config from '@dynamic-quants/config-tools/playwright';
+import { playwright } from '@dynamic-quants/config-tools';
 
-export default config;
+export default playwright;

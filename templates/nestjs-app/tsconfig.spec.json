@@ -1,12 +1,7 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "@dynamic-quants/config-tools/typescript/nestjs.json",
   "compilerOptions": {
-    "module": "commonjs",
     "types": ["jest", "node"]
   },
-  "include": [
-    "jest.config.ts",
-    "tests/**/*.spec.ts",
-    "tests/**/*.d.ts"
-  ]
+  "include": ["jest.config.ts", "src/**/*.test.ts", "src/**/*.spec.ts", "src/**/*.d.ts"]
 }

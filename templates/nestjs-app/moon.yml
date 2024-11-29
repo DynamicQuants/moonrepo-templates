@@ -10,7 +10,7 @@ fileGroups:
 tasks:
   # Building the application.
   build:
-    command: 'nest build'
+    command: 'nest build -p tsconfig.build.json'
     type: build
     inputs:
       - '@group(app)'
@@ -98,7 +98,7 @@ tasks:
 
   # Running end-to-end tests with Jest.
   test-e2e:
-    command: 'jest --config ./jest.e2e.ts'
+    command: "jest --testMatch \\'**/?(*.e2e-spec|*.e2e-test).[jt]s?(x)\\'"
     type: test
     inputs:
       - '@group(tests)'

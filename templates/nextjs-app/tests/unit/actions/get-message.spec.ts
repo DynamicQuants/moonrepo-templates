@@ -1,4 +1,4 @@
-import { getMessage } from '@actions/get-message';
+import { getMessage } from '@/actions/get-message';
 
 describe('get-message', () => {
   it('should return the correct message', async () => {

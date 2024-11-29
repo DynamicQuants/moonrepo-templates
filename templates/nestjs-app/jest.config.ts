@@ -1,9 +1,9 @@
-import config from '@dynamic-quants/config-tools/jest/nestjs';
+import { jestNestjs } from '@dynamic-quants/config-tools';
 import { Config } from 'jest';
 
-export default {
-  ...config,
-  transform: {
-    '^.+\\.(t|j)s?$': '@swc/jest',
-  },
-} as Config;
+const config: Config = {
+  ...jestNestjs,
+  transform: { '^.+\\.(t|j)s?$': '@swc/jest' },
+};
+
+export default config;

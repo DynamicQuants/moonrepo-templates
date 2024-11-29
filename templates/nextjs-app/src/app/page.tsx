@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
-import { getMessage } from '@actions/get-message';
-import Hero from '@components/hero';
+import { getMessage } from '@/actions/get-message';
+import Hero from '@/components/hero';
 
 export const metadata: Metadata = {
   title: 'Home',

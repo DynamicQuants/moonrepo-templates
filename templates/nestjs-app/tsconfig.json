@@ -1,3 +1,4 @@
 {
-  "extends": "@dynamic-quants/config-tools/typescript/nestjs.json"
+  "extends": "@dynamic-quants/config-tools/typescript/nestjs.json",
+  "include": ["src/**/*.ts"]
 }
