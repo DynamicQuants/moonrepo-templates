@@ -20,7 +20,7 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@dynamic-quants/config-tools": "^2.0.1"
+    "@dynamic-quants/config-tools": "^2.0.2"
   },
   "packageManager": "pnpm@9.14.3"
 }
