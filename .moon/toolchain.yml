@@ -5,7 +5,7 @@ node:
   packageManager: 'pnpm'
   syncPackageManagerField: true
   pnpm:
-    version: '9.14.3'
+    version: '9.14.4'
   addEnginesConstraint: true
   dedupeOnLockfileChange: true
   dependencyVersionFormat: 'workspace'

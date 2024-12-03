@@ -29,7 +29,7 @@ force: true
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
-    "@dynamic-quants/config-tools": "^2.0.3"
+    "@dynamic-quants/config-tools": "~2.0.4"
   },
-  "packageManager": "pnpm@9.14.3"
+  "packageManager": "pnpm@9.14.4"
 }

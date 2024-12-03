@@ -24,3 +24,6 @@ playwright
 
 # pnpm of templates.
 /templates/**/pnpm-lock.yaml
+
+# Internal files.
+package.json
