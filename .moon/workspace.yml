@@ -1,11 +1,11 @@
 $schema: 'https://moonrepo.dev/schemas/workspace.json'
 
-versionConstraint: '>=1.16.0'
+versionConstraint: '>=1.30.2'
 
 projects:
   nextjs-app: 'templates/nextjs-app'
   nestjs-app: 'templates/nestjs-app'
-
+  nestjs-lib: 'templates/nestjs-lib'
 vcs:
   manager: 'git'
   defaultBranch: 'main'
