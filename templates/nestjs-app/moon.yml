@@ -1,5 +1,8 @@
 type: application
 language: typescript
+tags:
+  - nestjs
+  - app
 
 fileGroups:
   app:
@@ -10,30 +13,33 @@ fileGroups:
 tasks:
   # Building the application.
   build:
-    command: 'nest build -p tsconfig.build.json'
+    command: 'pnpm build'
     type: build
     inputs:
       - '@group(app)'
+      - 'tsconfig.build.json'
 
   # Formatting the code using Prettier.
   format:
-    command: 'prettier --write "src/**/*.ts" "tests/**/*.ts"'
+    command: 'pnpm format'
     type: run
     inputs:
       - '@group(app)'
       - '@group(tests)'
+      - 'prettier.config.mjs'
 
   # Checking formatting using Prettier.
   format-check:
-    command: 'prettier --check "src/**/*.ts" "tests/**/*.ts"'
+    command: 'pnpm format-check'
     type: run
     inputs:
       - '@group(app)'
       - '@group(tests)'
+      - 'prettier.config.mjs'
 
   # Starting the application in production mode.
   start:
-    command: 'nest start'
+    command: 'pnpm start'
     type: run
     local: true
     deps:
@@ -41,13 +47,13 @@ tasks:
 
   # Starting the application in development mode with watch.
   dev:
-    command: 'nest start --watch'
+    command: 'pnpm start --watch'
     type: run
     local: true
 
   # Starting the application in debug mode with watch.
   start-debug:
-    command: 'nest start --debug --watch'
+    command: 'pnpm start --debug --watch'
     type: run
     local: true
     deps:
@@ -55,14 +61,14 @@ tasks:
 
   # Starting the application in production mode from built files.
   start-prod:
-    command: 'node dist/main'
+    command: 'pnpm start-prod'
     type: run
     deps:
       - build
 
   # Linting the code using ESLint.
   lint:
-    command: 'eslint "{src,tests}/**/*.ts" --fix'
+    command: 'pnpm lint'
     type: run
     inputs:
       - '@group(app)'
@@ -70,35 +76,35 @@ tasks:
 
   # Running tests with Jest in verbose mode.
   test:
-    command: 'jest --verbose'
+    command: 'pnpm test'
     type: test
     inputs:
       - '@group(tests)'
 
   # Running tests in watch mode with Jest.
   test-watch:
-    command: 'jest --watch'
+    command: 'pnpm test-watch'
     type: test
     inputs:
       - '@group(tests)'
 
   # Running tests with coverage using Jest.
   test-cov:
-    command: 'jest --coverage'
+    command: 'pnpm test-cov'
     type: test
     inputs:
       - '@group(tests)'
 
   # Running tests in debug mode with Jest.
   test-debug:
-    command: 'node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand'
+    command: 'pnpm test-debug'
     type: test
     inputs:
       - '@group(tests)'
 
   # Running end-to-end tests with Jest.
   test-e2e:
-    command: "jest --testMatch \\'**/?(*.e2e-spec|*.e2e-test).[jt]s?(x)\\'"
+    command: 'pnpm test-e2e'
     type: test
     inputs:
       - '@group(tests)'

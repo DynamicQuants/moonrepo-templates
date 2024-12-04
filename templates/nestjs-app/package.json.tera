@@ -4,22 +4,23 @@ force: true
 
 {
   "name": "{{ name | kebab_case }}",
+  "description": "{{ description }}",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "build": "nest build -p tsconfig.build.json",
     "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
-    "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "format-check": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\"",
     "start": "nest start",
     "dev": "nest start --watch",
-    "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main",
+    "start-debug": "nest start --debug --watch",
+    "start-prod": "node dist/main",
     "lint": "eslint \"{src,tests}/**/*.ts\" --fix",
     "test": "jest --verbose",
-    "test:watch": "jest --watch",
-    "test:cov": "jest --coverage",
-    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --testMatch '**/?(*.e2e-spec|*.e2e-test).[jt]s?(x)'"
+    "test-watch": "jest --watch",
+    "test-cov": "jest --coverage",
+    "test-debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test-e2e": "jest --testMatch '**/?(*.e2e-spec|*.e2e-test).[jt]s?(x)'"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -29,7 +30,11 @@ force: true
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
-    "@dynamic-quants/config-tools": "~2.0.4"
+    "@dynamic-quants/config-tools": "~2.0.5"
+  },
+  "config-tools": {
+    "target": "nestjs",
+    "type": "app"
   },
   "packageManager": "pnpm@9.14.4"
 }

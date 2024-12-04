@@ -10,3 +10,9 @@ variables:
     default: 'my-nestjs-app'
     required: true
     prompt: 'Whats the name of your NestJS application?'
+
+  description:
+    type: 'string'
+    default: 'A NestJS application.'
+    required: true
+    prompt: 'Whats the description of your NestJS application?'
