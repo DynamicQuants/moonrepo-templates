@@ -36,5 +36,9 @@ force: true
     "target": "nestjs",
     "type": "app"
   },
+  "moon-template": {
+    "name": "nestjs-app",
+    "version": "1.0.0"
+  },
   "packageManager": "pnpm@9.14.4"
 }
