@@ -1,0 +1,41 @@
+---
+force: true
+---
+
+{
+  "name": "{{ name | kebab_case }}",
+  "description": "{{ description }}",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "copy": "copyfiles -f README.md package.json dist",
+    "build": "pnpm clean && nest build -p tsconfig.build.json && pnpm copy",
+    "lint": "eslint \"{src,tests}/**/*.{ts,json}\" --fix",
+    "test": "jest --verbose",
+    "test-watch": "jest --watch",
+    "test-cov": "jest --coverage",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "format-check": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\""
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0"
+  },
+  "devDependencies": {
+    "@dynamic-quants/config-tools": "~2.0.5",
+    "copyfiles": "^2.4.1",
+    "rimraf": "^6.0.1"
+  },
+  "config-tools": {
+    "target": "nestjs",
+    "type": "lib"
+  },
+  "moon-template": {
+    "name": "nestjs-lib",
+    "version": "1.0.0"
+  },
+  "packageManager": "pnpm@9.14.4"
+}

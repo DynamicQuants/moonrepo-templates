@@ -1,0 +1,82 @@
+$schema: 'https://moonrepo.dev/schemas/project.json'
+
+type: library
+language: typescript
+stack: backend
+tags:
+  - nestjs
+  - lib
+
+fileGroups:
+  src:
+    - 'src/**/*'
+  tests:
+    - 'tests/**/*'
+
+tasks:
+  # Builds the library.
+  build:
+    description: 'Builds the library'
+    command: 'pnpm build'
+    type: build
+    inputs:
+      - '@group(src)'
+    outputs:
+      - 'dist/**/*'
+
+  # Checks code quality using ESLint.
+  lint:
+    description: 'Checks code quality using ESLint'
+    command: 'pnpm lint'
+    type: run
+    inputs:
+      - '@group(src)'
+      - '@group(tests)'
+
+  # Runs unit tests.
+  test:
+    description: 'Runs unit tests'
+    command: 'pnpm test'
+    type: test
+    inputs:
+      - '@group(src)'
+      - '@group(tests)'
+    outputs:
+      - 'coverage/**/*'
+
+  # Runs unit tests in watch mode.
+  test-watch:
+    description: 'Runs unit tests in watch mode'
+    command: 'pnpm test-watch'
+    type: test
+    inputs:
+      - '@group(src)'
+      - '@group(tests)'
+
+  # Runs unit tests with coverage.
+  test-cov:
+    description: 'Runs unit tests with coverage'
+    command: 'pnpm test-cov'
+    type: test
+    inputs:
+      - '@group(tests)'
+    outputs:
+      - 'coverage/**/*'
+
+  # Formats the code using Prettier.
+  format:
+    description: 'Formats the code using Prettier'
+    command: 'pnpm format'
+    type: run
+    inputs:
+      - '@group(src)'
+      - '@group(tests)'
+
+  # Checks formatting using Prettier.
+  format-check:
+    description: 'Checks formatting using Prettier'
+    command: 'pnpm format-check'
+    type: run
+    inputs:
+      - '@group(src)'
+      - '@group(tests)'
