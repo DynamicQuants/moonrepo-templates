@@ -4,6 +4,7 @@ force: true
 
 {
   "name": "{{ name | kebab_case }}",
+  "description": "{{ description }}",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -24,7 +25,15 @@ force: true
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@dynamic-quants/config-tools": "~2.0.4"
+    "@dynamic-quants/config-tools": "~2.0.6"
+  },
+  "config-tools": {
+    "target": "nextjs",
+    "type": "app"
+  },
+  "moon-template": {
+    "name": "nextjs-app",
+    "version": "1.0.0"
   },
   "packageManager": "pnpm@9.14.4"
 }

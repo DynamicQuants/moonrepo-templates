@@ -1,5 +1,11 @@
+$schema: 'https://moonrepo.dev/schemas/project.json'
+
 type: application
 language: typescript
+stack: frontend
+tags:
+  - nextjs
+  - app
 
 fileGroups:
   app:
@@ -12,14 +18,18 @@ fileGroups:
 tasks:
   # Building the application.
   build:
-    command: 'next build'
+    description: 'Build the application'
+    command: 'pnpm build'
     type: build
     inputs:
       - '@group(app)'
+    outputs:
+      - '.next/**/*'
 
   # Running the application in production mode.
   start:
-    command: 'next start'
+    description: 'Start the application'
+    command: 'pnpm start'
     type: run
     local: true
     deps:
@@ -27,33 +37,64 @@ tasks:
 
   # Running the application in development mode.
   dev:
-    command: 'next dev --port 3000'
+    description: 'Start the application in development mode'
+    command: 'pnpm dev'
     type: run
     local: true
 
   # Linting using Next.js and ESLint.
   lint:
-    command: 'next lint'
+    description: 'Lint the application'
+    command: 'pnpm lint'
+    type: run
+    inputs:
+      - '@group(app)'
+      - '@group(tests)'
 
-  # Testing with Jest.
+  # Running tests with Jest.
   test:
-    command: 'jest --verbose'
+    description: 'Run tests with Jest'
+    command: 'pnpm test'
     type: test
     inputs:
       - '@group(tests)'
+    outputs:
+      - 'coverage/**/*'
+
+  # Running tests with Jest in watch mode.
   test-watch:
-    command: 'jest --watch'
+    description: 'Run tests with Jest in watch mode'
+    command: 'pnpm test:watch'
     type: test
     inputs:
       - '@group(tests)'
+    outputs:
+      - 'coverage/**/*'
+
+  # Running end-to-end tests with Playwright.
   test-e2e:
-    command: 'playwright test'
+    description: 'Run end-to-end tests with Playwright'
+    command: 'pnpm test:e2e'
     type: test
     inputs:
       - '@group(tests)'
+    outputs:
+      - 'playwright/**/*'
 
   # Checking formatting using Prettier.
   format-check:
-    command: 'prettier --check \"src/**/*.{ts,tsx,md}\" \"*.{ts,tsx,mjs}\"'
+    description: 'Check formatting with Prettier'
+    command: 'pnpm format:check'
+    type: run
+    inputs:
+      - '@group(app)'
+      - '@group(tests)'
+
+  # Formatting the application using Prettier.
   format:
-    command: 'prettier --write \"src/**/*.{ts,tsx,md}\" \"*.{ts,tsx,mjs}\"'
+    description: 'Format the project code using Prettier'
+    command: 'pnpm format'
+    type: run
+    inputs:
+      - '@group(app)'
+      - '@group(tests)'
