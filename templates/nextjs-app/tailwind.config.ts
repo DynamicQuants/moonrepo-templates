@@ -1,4 +1,4 @@
-import tailwindConfig from '@dynamic-quants/config-tools/tailwind';
+import { tailwind as tailwindConfig } from '@dynamic-quants/config-tools';
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
