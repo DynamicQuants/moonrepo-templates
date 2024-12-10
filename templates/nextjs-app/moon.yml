@@ -18,8 +18,8 @@ fileGroups:
 tasks:
   # Building the application.
   build:
-    description: 'Build the application'
     command: 'pnpm build'
+    description: 'Build the application'
     type: build
     inputs:
       - '@group(app)'
@@ -28,8 +28,8 @@ tasks:
 
   # Running the application in production mode.
   start:
-    description: 'Start the application'
     command: 'pnpm start'
+    description: 'Start the application'
     type: run
     local: true
     deps:
@@ -37,15 +37,15 @@ tasks:
 
   # Running the application in development mode.
   dev:
-    description: 'Start the application in development mode'
     command: 'pnpm dev'
+    description: 'Start the application in development mode'
     type: run
     local: true
 
   # Linting using Next.js and ESLint.
   lint:
-    description: 'Lint the application'
     command: 'pnpm lint'
+    description: 'Lint the application'
     type: run
     inputs:
       - '@group(app)'
@@ -53,8 +53,8 @@ tasks:
 
   # Running tests with Jest.
   test:
-    description: 'Run tests with Jest'
     command: 'pnpm test'
+    description: 'Run tests with Jest'
     type: test
     inputs:
       - '@group(tests)'
@@ -63,8 +63,8 @@ tasks:
 
   # Running tests with Jest in watch mode.
   test-watch:
+    command: 'pnpm test-watch'
     description: 'Run tests with Jest in watch mode'
-    command: 'pnpm test:watch'
     type: test
     inputs:
       - '@group(tests)'
@@ -73,8 +73,8 @@ tasks:
 
   # Running end-to-end tests with Playwright.
   test-e2e:
+    command: 'pnpm test-e2e'
     description: 'Run end-to-end tests with Playwright'
-    command: 'pnpm test:e2e'
     type: test
     inputs:
       - '@group(tests)'
@@ -83,8 +83,8 @@ tasks:
 
   # Checking formatting using Prettier.
   format-check:
+    command: 'pnpm format-check'
     description: 'Check formatting with Prettier'
-    command: 'pnpm format:check'
     type: run
     inputs:
       - '@group(app)'
@@ -92,8 +92,8 @@ tasks:
 
   # Formatting the application using Prettier.
   format:
-    description: 'Format the project code using Prettier'
     command: 'pnpm format'
+    description: 'Format the project code using Prettier'
     type: run
     inputs:
       - '@group(app)'

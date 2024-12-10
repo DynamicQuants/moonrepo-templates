@@ -1,5 +1,5 @@
 {
-  "extends": "@dynamic-quants/config-tools/typescript/nextjs.json",
+  "extends": "@dynamic-quants/config-tools/typescript/nextjs.app.json",
   "compilerOptions": {
     "plugins": [{ "name": "next" }]
   },

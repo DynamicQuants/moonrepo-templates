@@ -13,9 +13,9 @@ force: true
     "start": "next start",
     "lint": "next lint",
     "test": "jest --verbose",
-    "test:watch": "jest --watch",
-    "test:e2e": "playwright test",
-    "format:check": "prettier --check \"src/**/*.{ts,spec.ts,spec.tsx,tsx,md}\" \"*.{ts,tsx,mjs}\"",
+    "test-watch": "jest --watch",
+    "test-e2e": "playwright test",
+    "format-check": "prettier --check \"src/**/*.{ts,spec.ts,spec.tsx,tsx,md}\" \"*.{ts,tsx,mjs}\"",
     "format": "prettier --write \"src/**/*.{ts,spec.ts,spec.tsx,tsx,md}\" \"*.{ts,tsx,mjs}\""
   },
   "dependencies": {
@@ -25,7 +25,7 @@ force: true
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@dynamic-quants/config-tools": "~2.0.6"
+    "@dynamic-quants/config-tools": "~2.0.7"
   },
   "config-tools": {
     "target": "nextjs",
