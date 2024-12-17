@@ -1,8 +1,8 @@
-import { eslintNextjs } from '@dynamic-quants/config-tools';
+import { eslintNextjsApp } from '@dynamic-quants/config-tools/eslint';
 import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 
-export default eslintNextjs(
+export default eslintNextjsApp(
   new FlatCompat({
     recommendedConfig: js.configs.recommended,
   }),

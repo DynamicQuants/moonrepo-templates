@@ -12,8 +12,15 @@ fileGroups:
     - 'src/**/*'
     - 'next-env.d.ts'
     - 'next.config.*'
+    - 'tailwind.config.ts'
+    - 'postcss.config.mjs'
+    - 'tsconfig.json'
   tests:
     - 'tests/**/*'
+    - 'playwright.config.ts'
+    - 'jest.config.ts'
+    - 'jest.setup.js'
+    - 'tsconfig.spec.json'
 
 tasks:
   # Building the application.
@@ -25,6 +32,11 @@ tasks:
       - '@group(app)'
     outputs:
       - '.next/**/*'
+    deps:
+      - 'lint'
+      - 'format-check'
+      - 'test'
+      - 'test-e2e'
 
   # Running the application in production mode.
   start:
@@ -50,6 +62,7 @@ tasks:
     inputs:
       - '@group(app)'
       - '@group(tests)'
+      - 'eslint.config.mjs'
 
   # Running tests with Jest.
   test:
@@ -89,6 +102,8 @@ tasks:
     inputs:
       - '@group(app)'
       - '@group(tests)'
+      - 'prettier.config.mjs'
+      - '.prettierignore'
 
   # Formatting the application using Prettier.
   format:
@@ -98,3 +113,5 @@ tasks:
     inputs:
       - '@group(app)'
       - '@group(tests)'
+      - 'prettier.config.mjs'
+      - '.prettierignore'

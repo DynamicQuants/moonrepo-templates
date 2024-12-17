@@ -18,8 +18,9 @@ playwright
 /build
 /dist
 
-# Misc.
+# System Files.
 .DS_Store
+Thumbs.db
 *.pem
 
 # Debug.
@@ -36,6 +37,3 @@ yarn-error.log*
 # Typescript.
 *.tsbuildinfo
 next-env.d.ts
-
-# Playwright.
-/playwright
