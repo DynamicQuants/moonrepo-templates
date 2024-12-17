@@ -1,7 +1,5 @@
 $schema: 'https://moonrepo.dev/schemas/workspace.json'
 
-versionConstraint: '>=1.30.5'
-
 projects:
   nestjs-app: 'templates/nestjs-app'
   nestjs-lib: 'templates/nestjs-lib'
@@ -13,7 +11,7 @@ vcs:
 
 runner:
   archivableTargets:
-    - ':format'
+    - ':build'
     - ':lint'
     - ':test'
     - ':format'
