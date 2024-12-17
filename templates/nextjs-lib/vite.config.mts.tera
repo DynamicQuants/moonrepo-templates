@@ -1,0 +1,12 @@
+---
+force: true
+---
+
+import { viteNextjsLib } from '@dynamic-quants/config-tools/vite';
+
+export default viteNextjsLib({
+  name: '{{ name | kebab_case }}',
+  entry: 'src/index.ts',
+  tsConfigFile: 'tsconfig.lib.json',
+  assets: ['*.md'],
+});

@@ -1,0 +1,44 @@
+---
+force: true
+---
+
+{
+  "name": "{{ name | kebab_case }}",
+  "description": "{{ description }}",
+  "version": "1.0.0",
+  "private": {{ private }},
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "lint": "eslint \"{src,tests}/**/*.{ts,json}\" --fix",
+    "test": "jest --verbose",
+    "test-watch": "jest --watch",
+    "test-cov": "jest --coverage",
+    "format": "prettier --write \"{src,tests}/**/*.{ts,tsx,json}\"",
+    "format-check": "prettier --check \"{src,tests}/**/*.{ts,tsx,json}\"",
+    "install": "pnpm config-tools setup"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@dynamic-quants/config-tools": "^3.0.0"
+  },
+  "config-tools": {
+    "target": "nextjs",
+    "type": "lib"
+  },
+  "moon-template": {
+    "name": "nextjs-lib",
+    "version": "1.0.0"
+  },
+  "packageManager": "pnpm@9.14.4"
+}

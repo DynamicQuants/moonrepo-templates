@@ -1,0 +1,96 @@
+$schema: 'https://moonrepo.dev/schemas/project.json'
+
+type: library
+language: typescript
+stack: frontend
+tags:
+  - nextjs
+  - lib
+
+fileGroups:
+  src:
+    - 'src/**/*'
+  tests:
+    - 'tests/**/*'
+    - 'jest.config.ts'
+    - 'jest.setup.js'
+    - 'tsconfig.spec.json'
+
+tasks:
+  # Builds the library.
+  build:
+    command: 'pnpm build'
+    description: 'Builds the library'
+    type: build
+    deps:
+      - 'lint'
+      - 'format'
+      - 'test'
+    inputs:
+      - '@group(src)'
+      - 'vite.config.mts'
+    outputs:
+      - 'dist/**/*'
+
+  # Checks code quality using ESLint.
+  lint:
+    command: 'pnpm lint'
+    description: 'Checks code quality using ESLint'
+    type: run
+    inputs:
+      - '@group(src)'
+      - '@group(tests)'
+      - 'eslint.config.mjs'
+
+  # Runs unit tests.
+  test:
+    command: 'pnpm test'
+    description: 'Runs unit tests'
+    type: test
+    inputs:
+      - '@group(src)'
+      - '@group(tests)'
+    outputs:
+      - 'coverage/**/*'
+
+  # Runs unit tests in watch mode.
+  test-watch:
+    command: 'pnpm test-watch'
+    description: 'Runs unit tests in watch mode'
+    type: test
+    inputs:
+      - '@group(src)'
+      - '@group(tests)'
+    outputs:
+      - 'coverage/**/*'
+
+  # Runs unit tests with coverage.
+  test-cov:
+    command: 'pnpm test-cov'
+    description: 'Runs unit tests with coverage'
+    type: test
+    inputs:
+      - '@group(src)'
+      - '@group(tests)'
+    outputs:
+      - 'coverage/**/*'
+
+  # Formats the code using Prettier.
+  format:
+    command: 'pnpm format'
+    description: 'Formats the code using Prettier'
+    type: run
+    inputs:
+      - '@group(src)'
+      - '@group(tests)'
+      - 'prettier.config.mjs'
+
+  # Checks formatting using Prettier.
+  format-check:
+    command: 'pnpm format-check'
+    description: 'Checks formatting using Prettier'
+    type: run
+    inputs:
+      - '@group(src)'
+      - '@group(tests)'
+      - 'prettier.config.mjs'

@@ -1,0 +1,33 @@
+$schema: 'https://moonrepo.dev/schemas/template.json'
+
+title: 'Next.js Library Template'
+description: 'A template for Next.js libraries.'
+destination: '/[destination]/[name]'
+
+variables:
+  name:
+    type: 'string'
+    default: 'my-nextjs-lib'
+    required: true
+    prompt: 'Whats the name of your Next.js library?'
+    order: 1
+
+  description:
+    type: 'string'
+    default: 'A Next.js library.'
+    required: true
+    prompt: 'Whats the description of your Next.js library?'
+    order: 2
+
+  private:
+    type: 'boolean'
+    default: true
+    prompt: 'Should this library be private?'
+    order: 3
+
+  destination:
+    type: 'enum'
+    values: ['libs', 'packages']
+    default: 'libs'
+    prompt: 'Where should this library be located?'
+    order: 4

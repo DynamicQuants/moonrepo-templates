@@ -1,0 +1,17 @@
+{
+  "extends": "@dynamic-quants/config-tools/tsconfig/nextjs.lib.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "module": "commonjs",
+    "types": ["jest", "node", "@testing-library/jest-dom"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "jest.config.ts",
+    "tests/**/*.spec.ts",
+    "tests/**/*.spec.tsx",
+    "tests/**/*.d.ts"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "extends": "@dynamic-quants/config-tools/tsconfig/nextjs.lib.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["jest.config.ts", "tests/**/*.spec.ts", "tests/**/*.spec.tsx", "tests/**/*.d.ts"]
+}

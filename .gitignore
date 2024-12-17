@@ -6,6 +6,7 @@ coverage
 out
 .swc
 playwright
+build
 
 # IDE - VSCode
 .vscode/*
@@ -22,8 +23,9 @@ playwright
 .DS_Store
 *.pem
 
-# pnpm of templates.
+# Internal templates files.
 /templates/**/pnpm-lock.yaml
+/templates/**/vite.config.mts
 
 # Internal files.
 package.json
