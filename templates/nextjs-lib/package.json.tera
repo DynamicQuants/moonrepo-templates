@@ -35,10 +35,5 @@ force: true
   "config-tools": {
     "target": "nextjs",
     "type": "lib"
-  },
-  "moon-template": {
-    "name": "nextjs-lib",
-    "version": "1.0.0"
-  },
-  "packageManager": "pnpm@9.14.4"
+  }
 }

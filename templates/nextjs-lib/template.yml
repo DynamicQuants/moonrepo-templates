@@ -14,7 +14,7 @@ variables:
 
   description:
     type: 'string'
-    default: 'A Next.js library.'
+    default: 'A Next.js library'
     required: true
     prompt: 'Whats the description of your Next.js library?'
     order: 2
