@@ -10,3 +10,11 @@ variables:
     default: 'my-nextjs-app'
     required: true
     prompt: 'Whats the name of your Next.js application?'
+    order: 1
+
+  description:
+    type: 'string'
+    default: 'A Next.js application'
+    required: true
+    prompt: 'Whats the description of your Next.js application?'
+    order: 2
