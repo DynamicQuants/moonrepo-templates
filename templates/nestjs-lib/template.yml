@@ -14,7 +14,7 @@ variables:
 
   description:
     type: 'string'
-    default: 'A NestJS library.'
+    default: 'A NestJS library'
     required: true
     prompt: 'Whats the description of your NestJS library?'
     order: 2
