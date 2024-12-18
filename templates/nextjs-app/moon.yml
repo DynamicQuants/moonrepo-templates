@@ -15,6 +15,7 @@ fileGroups:
     - 'tailwind.config.ts'
     - 'postcss.config.mjs'
     - 'tsconfig.json'
+    - 'package.json'
   tests:
     - 'tests/**/*'
     - 'playwright.config.ts'

@@ -30,7 +30,7 @@ force: true
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@dynamic-quants/config-tools": "^3.0.0"
+    "@dynamic-quants/config-tools": "latest"
   },
   "config-tools": {
     "target": "nextjs",

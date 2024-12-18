@@ -11,6 +11,7 @@ fileGroups:
   src:
     - 'src/**/*'
     - 'tsconfig.json'
+    - 'package.json'
   tests:
     - 'tests/**/*'
     - 'jest.config.ts'
