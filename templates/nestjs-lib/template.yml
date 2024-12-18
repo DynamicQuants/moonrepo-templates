@@ -1,7 +1,7 @@
 $schema: 'https://moonrepo.dev/schemas/template.json'
 
 title: 'NestJS Template'
-description: 'A template for NestJS libraries.'
+description: 'A template for NestJS libraries'
 destination: '/[destination]/[name]'
 
 variables:
@@ -19,9 +19,15 @@ variables:
     prompt: 'Whats the description of your NestJS library?'
     order: 2
 
+  private:
+    type: 'boolean'
+    default: true
+    prompt: 'Should this library be private?'
+    order: 3
+
   destination:
     type: 'enum'
     values: ['libs', 'packages']
     default: 'packages'
     prompt: 'Where should this library be located?'
-    order: 3
+    order: 4

@@ -1,3 +1,3 @@
-import prettier from '@dynamic-quants/config-tools/prettier.mjs';
+import prettier from '@dynamic-quants/config-tools/prettier';
 
 export default prettier;

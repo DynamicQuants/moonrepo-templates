@@ -10,33 +10,41 @@ tags:
 fileGroups:
   src:
     - 'src/**/*'
+    - 'tsconfig.json'
   tests:
     - 'tests/**/*'
+    - 'jest.config.ts'
+    - 'tsconfig.spec.json'
 
 tasks:
   # Builds the library.
   build:
-    description: 'Builds the library'
     command: 'pnpm build'
+    description: 'Builds the library'
     type: build
     inputs:
       - '@group(src)'
     outputs:
       - 'dist/**/*'
+    deps:
+      - 'lint'
+      - 'format-check'
+      - 'test'
 
   # Checks code quality using ESLint.
   lint:
-    description: 'Checks code quality using ESLint'
     command: 'pnpm lint'
+    description: 'Checks code quality using ESLint'
     type: run
     inputs:
       - '@group(src)'
       - '@group(tests)'
+      - 'eslint.config.mjs'
 
   # Runs unit tests.
   test:
-    description: 'Runs unit tests'
     command: 'pnpm test'
+    description: 'Runs unit tests'
     type: test
     inputs:
       - '@group(src)'
@@ -46,37 +54,44 @@ tasks:
 
   # Runs unit tests in watch mode.
   test-watch:
-    description: 'Runs unit tests in watch mode'
     command: 'pnpm test-watch'
+    description: 'Runs unit tests in watch mode'
     type: test
     inputs:
       - '@group(src)'
       - '@group(tests)'
+    outputs:
+      - 'coverage/**/*'
 
   # Runs unit tests with coverage.
   test-cov:
-    description: 'Runs unit tests with coverage'
     command: 'pnpm test-cov'
+    description: 'Runs unit tests with coverage'
     type: test
     inputs:
+      - '@group(src)'
       - '@group(tests)'
     outputs:
       - 'coverage/**/*'
 
   # Formats the code using Prettier.
   format:
-    description: 'Formats the code using Prettier'
     command: 'pnpm format'
+    description: 'Formats the code using Prettier'
     type: run
     inputs:
       - '@group(src)'
       - '@group(tests)'
+      - 'prettier.config.mjs'
+      - '.prettierignore'
 
   # Checks formatting using Prettier.
   format-check:
-    description: 'Checks formatting using Prettier'
     command: 'pnpm format-check'
+    description: 'Checks formatting using Prettier'
     type: run
     inputs:
       - '@group(src)'
       - '@group(tests)'
+      - 'prettier.config.mjs'
+      - '.prettierignore'
