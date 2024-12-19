@@ -1,4 +1,11 @@
 {
-  "extends": "@dynamic-quants/config-tools/typescript/nestjs.app.json",
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "tests/**/*.ts"],
+  "references": [
+    {
+      "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ]
 }

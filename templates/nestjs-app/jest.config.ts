@@ -1,4 +1,4 @@
-import { jestNestjs } from '@dynamic-quants/config-tools';
+import { jestNestjs } from '@dynamic-quants/config-tools/jest';
 import { Config } from 'jest';
 
 const config: Config = {

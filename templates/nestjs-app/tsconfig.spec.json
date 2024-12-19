@@ -1,7 +1,15 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "@dynamic-quants/config-tools/tsconfig/nestjs.app.json",
   "compilerOptions": {
+    "composite": true,
+    "declaration": true,
     "types": ["jest", "node"]
   },
-  "include": ["jest.config.ts", "tests/**/*.test.ts", "tests/**/*.spec.ts"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "jest.config.ts",
+    "tests/**/*.spec.ts",
+    "tests/**/*.e2e-spec.ts"
+  ]
 }

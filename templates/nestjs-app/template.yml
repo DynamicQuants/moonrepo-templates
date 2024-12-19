@@ -14,7 +14,7 @@ variables:
 
   description:
     type: 'string'
-    default: 'A NestJS application.'
+    default: 'A NestJS application'
     required: true
     prompt: 'Whats the description of your NestJS application?'
     order: 2

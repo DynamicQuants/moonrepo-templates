@@ -10,68 +10,56 @@ tags:
 fileGroups:
   app:
     - 'src/**/*'
+    - 'nest-cli.json'
+    - 'tsconfig.app.json'
+    - 'package.json'
   tests:
     - 'tests/**/*'
+    - 'jest.config.ts'
+    - 'tsconfig.spec.json'
 
 tasks:
   # Building the application.
   build:
     command: 'pnpm build'
+    description: 'Builds the application for production'
     type: build
     inputs:
       - '@group(app)'
-      - 'tsconfig.build.json'
-
-  # Formatting the code using Prettier.
-  format:
-    command: 'pnpm format'
-    type: run
-    inputs:
-      - '@group(app)'
-      - '@group(tests)'
-      - 'prettier.config.mjs'
-
-  # Checking formatting using Prettier.
-  format-check:
-    command: 'pnpm format-check'
-    type: run
-    inputs:
-      - '@group(app)'
-      - '@group(tests)'
-      - 'prettier.config.mjs'
-
-  # Starting the application in production mode.
-  start:
-    command: 'pnpm start'
-    type: run
-    local: true
+    outputs:
+      - 'dist/**/*'
     deps:
-      - build
+      - 'lint'
+      - 'format-check'
+      - 'test'
+      - 'test-e2e'
 
   # Starting the application in development mode with watch.
   dev:
-    command: 'pnpm start --watch'
+    command: 'pnpm dev'
+    description: 'Start the application in development mode with watch'
     type: run
     local: true
 
   # Starting the application in debug mode with watch.
   start-debug:
-    command: 'pnpm start --debug --watch'
+    command: 'pnpm start-debug'
+    description: 'Start the application in debug mode with watch'
     type: run
     local: true
-    deps:
-      - build
 
   # Starting the application in production mode from built files.
-  start-prod:
-    command: 'pnpm start-prod'
+  start:
+    command: 'pnpm start'
+    description: 'Start the application in production mode from built files'
     type: run
     deps:
-      - build
+      - 'build'
 
   # Linting the code using ESLint.
   lint:
     command: 'pnpm lint'
+    description: 'Lint the code using ESLint'
     type: run
     inputs:
       - '@group(app)'
@@ -80,34 +68,74 @@ tasks:
   # Running tests with Jest in verbose mode.
   test:
     command: 'pnpm test'
+    description: 'Run tests with Jest in verbose mode'
     type: test
     inputs:
+      - '@group(app)'
       - '@group(tests)'
+    outputs:
+      - 'coverage/**/*'
 
   # Running tests in watch mode with Jest.
   test-watch:
     command: 'pnpm test-watch'
+    description: 'Run tests with Jest in watch mode'
     type: test
     inputs:
+      - '@group(app)'
       - '@group(tests)'
+    outputs:
+      - 'coverage/**/*'
 
   # Running tests with coverage using Jest.
   test-cov:
     command: 'pnpm test-cov'
+    description: 'Run tests with coverage using Jest'
     type: test
     inputs:
+      - '@group(app)'
       - '@group(tests)'
+    outputs:
+      - 'coverage/**/*'
 
   # Running tests in debug mode with Jest.
   test-debug:
     command: 'pnpm test-debug'
+    description: 'Run tests with Jest in debug mode'
     type: test
     inputs:
+      - '@group(app)'
       - '@group(tests)'
+    outputs:
+      - 'coverage/**/*'
 
   # Running end-to-end tests with Jest.
   test-e2e:
     command: 'pnpm test-e2e'
+    description: 'Run end-to-end tests with Jest'
     type: test
     inputs:
+      - '@group(app)'
       - '@group(tests)'
+
+  # Formatting the code using Prettier.
+  format:
+    command: 'pnpm format'
+    description: 'Format the code using Prettier'
+    type: run
+    inputs:
+      - '@group(app)'
+      - '@group(tests)'
+      - 'prettier.config.mjs'
+      - '.prettierignore'
+
+  # Checking formatting using Prettier.
+  format-check:
+    command: 'pnpm format-check'
+    description: 'Check formatting using Prettier'
+    type: run
+    inputs:
+      - '@group(app)'
+      - '@group(tests)'
+      - 'prettier.config.mjs'
+      - '.prettierignore'
