@@ -1,0 +1,13 @@
+{
+  "extends": "@dynamic-quants/config-tools/tsconfig/node.cli.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "types": ["node", "jest"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "jest.config.ts",
+    "tests/**/*.spec.ts"
+  ]
+}

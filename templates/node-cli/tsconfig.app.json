@@ -1,0 +1,9 @@
+{
+  "extends": "@dynamic-quants/config-tools/tsconfig/node.cli.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

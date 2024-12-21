@@ -1,0 +1,48 @@
+---
+force: true
+---
+{
+  "name": "{{ name | kebab_case }}",
+  "description": "{{ description }}",
+  "version": "1.0.0",
+   "keywords": [
+    "cli",
+    "node"
+  ],
+  "bin": {
+    "node-cli": "./dist/index.js"
+  },
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+   "clean": "rimraf dist",
+    "copy": "copyfiles -f README.md package.json dist",
+    "build": "pnpm clean && tsc -p tsconfig.app.json && pnpm copy",
+    "lint": "eslint \"{src,tests}/**/*.{ts,json}\" --fix",
+    "dev": "nodemon --watch src/**/*.ts --exec 'node --import=tsx' src/index.ts",
+    "start": "node dist/src/index.js",
+    "test": "jest --verbose",
+    "test-watch": "jest --watch",
+    "test-cov": "jest --coverage",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "format-check": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "install": "pnpm config-tools setup"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "inquirer": "^12.2.0"
+  },
+  "devDependencies": {
+    "@dynamic-quants/config-tools": "latest",
+    "copyfiles": "^2.4.1",
+    "nodemon": "^3.1.9",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.2"
+  },
+  "config-tools": {
+    "target": "node",
+    "type": "cli"
+  }
+}

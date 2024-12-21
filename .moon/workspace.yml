@@ -5,6 +5,7 @@ projects:
   nestjs-lib: 'templates/nestjs-lib'
   nextjs-app: 'templates/nextjs-app'
   nextjs-lib: 'templates/nextjs-lib'
+  node-cli: 'templates/node-cli'
 vcs:
   manager: 'git'
   defaultBranch: 'main'
