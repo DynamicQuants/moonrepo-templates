@@ -5,18 +5,15 @@ force: true
   "name": "{{ name | kebab_case }}",
   "description": "{{ description }}",
   "version": "1.0.0",
-   "keywords": [
+  "keywords": [
     "cli",
     "node"
   ],
   "bin": {
-    "node-cli": "./dist/index.js"
-  },
-  "exports": {
-    ".": "./src/index.js"
+    "{{ name | kebab_case }}": "./src/index.js"
   },
   "scripts": {
-   "clean": "rimraf dist",
+    "clean": "rimraf dist",
     "copy": "copyfiles -f README.md package.json dist",
     "build": "pnpm clean && tsc -p tsconfig.app.json && pnpm copy",
     "lint": "eslint \"{src,tests}/**/*.{ts,json}\" --fix",
