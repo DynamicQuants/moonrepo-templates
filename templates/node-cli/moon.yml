@@ -1,6 +1,6 @@
 $schema: 'https://moonrepo.dev/schemas/project.json'
 
-type: library
+type: application
 language: typescript
 stack: backend
 tags:
