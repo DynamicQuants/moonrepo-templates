@@ -11,10 +11,11 @@ force: true
   "main": "./src/index.js",
   "typings": "./src/index.d.ts",
  "scripts": {
-    "clean": "rimraf dist",
+   "clean": "rimraf dist",
     "copy": "copyfiles -f README.md package.json dist",
     "build": "pnpm clean && nest build -p tsconfig.lib.json && pnpm copy",
     "lint": "eslint \"{src,tests}/**/*.{ts,json}\" --fix",
+    "lint-check": "eslint \"{src,tests}/**/*.{ts,json}\"",
     "test": "jest --verbose",
     "test-watch": "jest --watch",
     "test-cov": "jest --coverage",
