@@ -28,13 +28,23 @@ tasks:
     outputs:
       - 'dist/**/*'
     deps:
-      - 'lint'
+      - 'lint-check'
       - 'format-check'
       - 'test'
 
-  # Checks code quality using ESLint.
+  # Checks code quality using ESLint (fixable).
   lint:
     command: 'pnpm lint'
+    description: 'Checks code quality using ESLint'
+    type: run
+    inputs:
+      - '@group(src)'
+      - '@group(tests)'
+      - 'eslint.config.mjs'
+
+  # Checks code quality using ESLint (non-fixable).
+  lint-check:
+    command: 'pnpm lint-check'
     description: 'Checks code quality using ESLint'
     type: run
     inputs:
